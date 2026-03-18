@@ -3,13 +3,29 @@
 // ============================================================
 @use '../abstracts/variables' as *;
 
+// --- Utilities: Colores dinámicos con @each ---
+$theme-colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "accent": $color-accent
+);
+
+@each $name, $hex in $theme-colors {
+  .text-custom-#{$name} {
+    color: $hex;
+  }
+  .bg-custom-#{$name} {
+    background-color: $hex;
+  }
+}
+
+// --- Color acento para textos (legado soportado) ---
+.text-accent {
+  color: $color-accent;
+}
+
 // --- Padding vertical de secciones ---
 .py-6 {
   padding-top: $py-section;
   padding-bottom: $py-section;
-}
-
-// --- Color acento para textos ---
-.text-accent {
-  color: $color-accent;
 }
