@@ -1,0 +1,23 @@
+// ============================================================
+// CTA SECTION — Call to Action
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.cta-section {
+  // Operador SASS: multiplicación de variable
+  padding: ($py-section * 0.8) 0;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, rgba($color-primary-mid, 0.8), rgba($color-secondary, 0.35));
+  border: 1px solid $color-border;
+  @include glass-effect(0.8, 12px);
+  // Sobreescribimos el background del mixin con el gradiente
+  background: linear-gradient(135deg, rgba($color-primary-mid, 0.8), rgba($color-secondary, 0.35));
+
+  h2 {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+  }
+}

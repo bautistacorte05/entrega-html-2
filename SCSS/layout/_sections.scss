@@ -1,0 +1,27 @@
+// ============================================================
+// SECTION HEADERS — Encabezados de secciones
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section-tag {
+  @include tag-style;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: $color-text-muted;
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+}

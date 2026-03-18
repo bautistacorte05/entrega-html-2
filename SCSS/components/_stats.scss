@@ -1,0 +1,36 @@
+// ============================================================
+// STATS — Sección de estadísticas
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.stats-section {
+  background: $color-surface;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.stat-card {
+  @include card-base;
+  @include transition(transform $transition-fast, border-color $transition-fast);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-accent-glow;
+  }
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  @include gradient-text;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-label {
+  color: $color-text-muted;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}

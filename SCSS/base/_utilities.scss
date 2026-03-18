@@ -1,0 +1,15 @@
+// ============================================================
+// UTILIDADES — Clases utilitarias propias
+// ============================================================
+@use '../abstracts/variables' as *;
+
+// --- Padding vertical de secciones ---
+.py-6 {
+  padding-top: $py-section;
+  padding-bottom: $py-section;
+}
+
+// --- Color acento para textos ---
+.text-accent {
+  color: $color-accent;
+}

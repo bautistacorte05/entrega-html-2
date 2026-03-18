@@ -1,0 +1,65 @@
+// ============================================================
+// FOOTER — Pie de página
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.custom-footer {
+  background: $color-footer-bg;
+  border-top: 1px solid $color-border;
+}
+
+.footer-brand {
+  font-size: 1.3rem;
+  color: $color-accent;
+}
+
+.footer-heading {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  // Nesting en los links del footer
+  a {
+    color: $color-text-muted;
+    text-decoration: none;
+    font-size: 0.92rem;
+    @include transition(color $transition-fast);
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.footer-social {
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-text-muted;
+  text-decoration: none;
+  font-size: 1.1rem;
+  @include transition(background $transition-fast, color $transition-fast, border-color $transition-fast, transform $transition-fast);
+
+  &:hover {
+    background: $color-accent-light;
+    color: $color-accent;
+    border-color: $color-accent-glow;
+    transform: translateY(-2px);
+  }
+}
+
+.footer-divider {
+  border-color: $color-border;
+  opacity: 1;
+}

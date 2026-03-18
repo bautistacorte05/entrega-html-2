@@ -1,0 +1,26 @@
+// ============================================================
+// BOTONES — Estilos de botones personalizados
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn-accent {
+  background: linear-gradient(135deg, $color-accent, $color-secondary);
+  color: $color-primary;
+  border: none;
+  font-weight: 700;
+  border-radius: $radius-md;
+  @include transition(transform $transition-fast, box-shadow $transition-fast, opacity $transition-fast);
+
+  &:hover {
+    color: $color-primary;
+    transform: translateY(-2px);
+    box-shadow: $shadow-glow;
+    opacity: 0.92;
+  }
+}
+
+.btn-outline-light {
+  border-radius: $radius-md;
+  font-weight: 600;
+}

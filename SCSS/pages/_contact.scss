@@ -1,0 +1,77 @@
+// ============================================================
+// CONTACT — Página de contacto
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact-form-wrapper {
+  @include card-base;
+  padding: 2.5rem;
+}
+
+.form-label {
+  color: $color-text;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+// Inputs y selects con nesting
+.form-control,
+.form-select {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid $color-border !important;
+  color: $color-text !important;
+  border-radius: $radius-sm !important;
+  padding: 0.65rem 1rem;
+  @include transition(border-color $transition-fast, box-shadow $transition-fast);
+
+  &:focus {
+    border-color: $color-accent-focus !important;
+    box-shadow: 0 0 0 3px $color-accent-shadow !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+}
+
+.form-control {
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+// --- Info de contacto ---
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+  @include card-base;
+  border-radius: $radius-sm;
+  @include transition(border-color $transition-fast);
+
+  &:hover {
+    border-color: rgba($color-accent, 0.3);
+  }
+}
+
+.contact-info-icon {
+  @include icon-box(44px, 1.3rem);
+  flex-shrink: 0;
+}
+
+.contact-info-text {
+  h6 {
+    font-size: 0.8rem;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.15rem;
+  }
+
+  p {
+    color: $color-text;
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+}

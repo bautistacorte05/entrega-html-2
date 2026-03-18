@@ -1,0 +1,26 @@
+{
+  "name": "entrega-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass SCSS/main.scss CSS/style.css --style compressed",
+    "watch": "sass SCSS/main.scss CSS/style.css --watch --style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bautistacorte05/entrega-html-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bautistacorte05/entrega-html-2/issues"
+  },
+  "homepage": "https://github.com/bautistacorte05/entrega-html-2#readme",
+  "devDependencies": {
+    "sass": "^1.98.0"
+  }
+}

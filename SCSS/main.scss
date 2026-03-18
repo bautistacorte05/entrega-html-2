@@ -1,0 +1,35 @@
+// ============================================================
+// MAIN.SCSS — Archivo principal de Mi Sitio Web (Arquitectura 7-1)
+// ============================================================
+
+// 1. Abstracts (Variables y Mixins)
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+
+// 2. Base (Reset, utilidades globales)
+@use 'base/base';
+@use 'base/utilities';
+@use 'base/animations';
+@use 'base/scrollbar';
+
+// 3. Components (Botones, cards, etc.)
+@use 'components/buttons';
+@use 'components/stats';
+@use 'components/services';
+@use 'components/cta';
+
+// 4. Layout (Navbar, footer, hero, sections)
+@use 'layout/navbar';
+@use 'layout/hero';
+@use 'layout/sections';
+@use 'layout/footer';
+
+// 5. Pages (Estilos específicos por página)
+@use 'pages/pages';
+@use 'pages/contact';
+
+// 6. Themes (Vacío por ahora)
+// @use 'themes/...';
+
+// 7. Vendors (Vacío por ahora)
+// @use 'vendors/...';

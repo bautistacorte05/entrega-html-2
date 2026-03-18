@@ -1,0 +1,47 @@
+// ============================================================
+// HERO — Sección principal de la home
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero-section {
+  min-height: 90vh;
+  padding: 5rem 0 4rem;
+}
+
+.hero-badge {
+  @include tag-style;
+  background: $color-accent-strong;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  display: inline-block;
+
+  // Pseudo-elemento con nesting
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: $radius-lg;
+    background: linear-gradient(135deg, $color-accent, $color-secondary);
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(8px);
+  }
+}
+
+.hero-img {
+  max-height: 450px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  @include transition(transform $transition-normal);
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}

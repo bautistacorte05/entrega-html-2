@@ -1,0 +1,52 @@
+// ============================================================
+// NAVBAR — Navegación principal
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.custom-navbar {
+  @include glass-effect(0.85, 16px);
+  border-bottom: 1px solid $color-border;
+  padding: 1rem 0;
+  @include transition(background $transition-normal, box-shadow $transition-normal);
+
+  // Navbar con scroll (nesting)
+  &.scrolled {
+    background: rgba($color-primary, 0.97);
+    box-shadow: $shadow-md;
+  }
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: $color-accent !important;
+}
+
+.navbar-nav {
+  // Nesting en los links de navegación
+  .nav-link {
+    color: $color-text !important;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: $radius-sm;
+    @include transition(background $transition-fast, color $transition-fast);
+
+    &:hover,
+    &.active {
+      color: $color-accent !important;
+      background: $color-accent-bg;
+    }
+  }
+}
+
+// Botón CTA en navbar
+.btn-nav-cta {
+  border: 1.5px solid $color-accent !important;
+  color: $color-accent !important;
+
+  &:hover {
+    background: $color-accent !important;
+    color: $color-primary !important;
+  }
+}

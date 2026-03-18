@@ -1,0 +1,56 @@
+// ============================================================
+// VARIABLES SASS — Mi Sitio Web
+// Migración de CSS Custom Properties a variables SASS
+// ============================================================
+
+// --- Paleta de Colores ---
+$color-primary:      #1a0a2e;
+$color-primary-mid:  #2d1b69;
+$color-secondary:    #11998e;
+$color-accent:       #38ef7d;
+$color-accent-hover: #2ecc71;
+$color-text:         #e2e8f0;
+$color-text-muted:   #94a3b8;
+$color-surface:      rgba(255, 255, 255, 0.05);
+$color-border:       rgba(255, 255, 255, 0.1);
+$color-card-bg:      rgba(255, 255, 255, 0.04);
+$color-footer-bg:    #0d0720;
+
+// --- Colores con opacidad (operadores SASS) ---
+$color-accent-light:  rgba($color-accent, 0.1);
+$color-accent-border: rgba($color-accent, 0.25);
+$color-accent-glow:   rgba($color-accent, 0.35);
+$color-accent-bg:     rgba($color-accent, 0.08);
+$color-accent-strong: rgba($color-accent, 0.15);
+$color-accent-hover-bg: rgba($color-accent, 0.2);
+$color-accent-focus:  rgba($color-accent, 0.5);
+$color-accent-shadow: rgba($color-accent, 0.12);
+
+// --- Tipografía ---
+$font-family:     'Inter', system-ui, -apple-system, sans-serif;
+$font-size-base:  1rem;
+$line-height-base: 1.6;
+
+// --- Border Radius ---
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-pill: 999px;
+
+// --- Sombras ---
+$shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.25);
+$shadow-md:   0 8px 24px rgba(0, 0, 0, 0.35);
+$shadow-glow: 0 0 20px rgba($color-accent, 0.25);
+
+// --- Transiciones ---
+$transition-fast:   0.2s ease;
+$transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+// --- Espaciado de secciones ---
+$py-section: 5rem;
+
+// --- Breakpoints ---
+$breakpoint-xl:  1199.98px;
+$breakpoint-lg:  991.98px;
+$breakpoint-md:  767.98px;
+$breakpoint-sm:  575.98px;

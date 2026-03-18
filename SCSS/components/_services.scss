@@ -1,0 +1,88 @@
+// ============================================================
+// SERVICE CARDS — Tarjetas de servicios
+// ============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Placeholder para estilos compartidos entre cards (@extend)
+%card-hover-effect {
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($color-accent, 0.3);
+    box-shadow: $shadow-glow;
+  }
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  @include card-base;
+  @include transition(transform $transition-normal, border-color $transition-normal, box-shadow $transition-normal);
+  position: relative;
+  overflow: hidden;
+
+  // @extend del placeholder
+  @extend %card-hover-effect;
+
+  // Pseudo-elemento con nesting
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $color-accent, $color-secondary);
+    opacity: 0;
+    @include transition(opacity $transition-normal);
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+
+  // Modificador BEM: Card destacada (nesting)
+  &--featured {
+    background: linear-gradient(160deg, $color-accent-light, rgba($color-secondary, 0.1));
+    border-color: $color-accent-border;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.service-icon {
+  @include icon-box(52px, 1.5rem);
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.service-desc {
+  color: $color-text-muted;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: $color-accent;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  @include transition(gap $transition-fast, color $transition-fast);
+
+  &:hover {
+    gap: 0.7rem;
+    color: $color-accent-hover;
+  }
+}

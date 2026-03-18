@@ -1,0 +1,68 @@
+// ============================================================
+// MIXINS SASS — Mixins reutilizables
+// ============================================================
+@use 'variables' as *;
+
+// --- Mixin: Centrar con Flexbox ---
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// --- Mixin: Efecto Glassmorphism ---
+@mixin glass-effect($bg-opacity: 0.85, $blur: 16px) {
+  background: rgba($color-primary, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+// --- Mixin: Texto con Gradiente ---
+@mixin gradient-text {
+  background: linear-gradient(135deg, $color-accent, $color-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// --- Mixin: Transición personalizada ---
+@mixin transition($properties...) {
+  transition: $properties;
+}
+
+// --- Mixin: Responsive (media queries) ---
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// --- Mixin: Card base ---
+@mixin card-base {
+  background: $color-card-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+}
+
+// --- Mixin: Icon container ---
+@mixin icon-box($size: 52px, $font-size: 1.5rem) {
+  width: $size;
+  height: $size;
+  @include flex-center;
+  background: $color-accent-light;
+  border-radius: $radius-sm;
+  font-size: $font-size;
+  color: $color-accent;
+}
+
+// --- Mixin: Tag / Badge ---
+@mixin tag-style {
+  display: inline-block;
+  background: $color-accent-shadow;
+  color: $color-accent;
+  border: 1px solid $color-accent-border;
+  border-radius: $radius-pill;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

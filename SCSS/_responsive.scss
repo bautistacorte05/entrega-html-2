@@ -1,0 +1,63 @@
+// ============================================================
+// RESPONSIVE — Media Queries avanzados
+// ============================================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// --- XL: ≤1199px ---
+@include responsive($breakpoint-xl) {
+  .py-6 {
+    padding-top: $py-section - 1rem;
+    padding-bottom: $py-section - 1rem;
+  }
+}
+
+// --- LG: ≤991px ---
+@include responsive($breakpoint-lg) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 4rem 0 3rem;
+  }
+
+  .navbar-nav {
+    padding: 1rem 0;
+    gap: 0 !important;
+  }
+}
+
+// --- MD: ≤767px ---
+@include responsive($breakpoint-md) {
+  .py-6 {
+    padding-top: $py-section - 2rem;
+    padding-bottom: $py-section - 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .service-detail-card {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+// --- SM: ≤575px ---
+@include responsive($breakpoint-sm) {
+  .hero-section {
+    padding: 3rem 0 2rem;
+  }
+
+  .cta-box {
+    padding: 2rem !important;
+  }
+}
