@@ -804,6 +804,43 @@ a {
 .project-card:hover .project-overlay {
   opacity: 1;
 }
+.project-card--frontend:hover {
+  border-color: rgba(56, 239, 125, 0.4);
+}
+.project-card--frontend .project-badge {
+  background: #38ef7d;
+}
+.project-card--landing:hover {
+  border-color: rgba(17, 153, 142, 0.4);
+}
+.project-card--landing .project-badge {
+  background: #11998e;
+}
+.project-card--landing .project-category {
+  color: #11998e;
+}
+.project-card--landing .project-tag {
+  background: rgba(17, 153, 142, 0.08);
+  border-color: rgba(17, 153, 142, 0.2);
+  color: #11998e;
+}
+
+.project-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
 
 .project-img {
   position: relative;

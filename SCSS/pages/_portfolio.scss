@@ -94,6 +94,40 @@
       opacity: 1;
     }
   }
+
+  // --- ACENTOS MINIMALISTAS ---
+  &--frontend {
+    &:hover { border-color: rgba($color-accent, 0.4); }
+    .project-badge { background: $color-accent; }
+  }
+
+  &--landing {
+    &:hover { border-color: rgba($color-secondary, 0.4); }
+    .project-badge { background: $color-secondary; }
+    .project-category { color: $color-secondary; }
+    .project-tag {
+      background: rgba($color-secondary, 0.08);
+      border-color: rgba($color-secondary, 0.2);
+      color: $color-secondary;
+    }
+  }
+}
+
+.project-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-sm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  pointer-events: none;
 }
 
 .project-img {
