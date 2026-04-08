@@ -12,7 +12,8 @@
 .cta-box {
   background: linear-gradient(135deg, rgba($color-primary-mid, 0.8), rgba($color-secondary, 0.35));
   border: 1px solid $color-border;
-  @include glass-effect(0.8, 12px);
+  @include glass-effect(0.05, 12px, 0.1);
+  border-radius: $radius-lg;
   // Sobreescribimos el background del mixin con el gradiente
   background: linear-gradient(135deg, rgba($color-primary-mid, 0.8), rgba($color-secondary, 0.35));
 

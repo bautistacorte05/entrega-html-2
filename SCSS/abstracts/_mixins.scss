@@ -11,10 +11,21 @@
 }
 
 // --- Mixin: Efecto Glassmorphism ---
-@mixin glass-effect($bg-opacity: 0.85, $blur: 16px) {
-  background: rgba($color-primary, $bg-opacity);
+@mixin glass-effect($bg-opacity: 0.1, $blur: 15px, $border-opacity: 0.15) {
+  background: rgba(255, 255, 255, $bg-opacity);
   backdrop-filter: blur($blur);
   -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, $border-opacity);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+// --- Mixin: Card Glass (Variante para fondos oscuros) ---
+@mixin glass-card-dark($opacity: 0.05) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 // --- Mixin: Texto con Gradiente ---

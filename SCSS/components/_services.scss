@@ -16,7 +16,8 @@
 .service-card {
   display: flex;
   flex-direction: column;
-  @include card-base;
+  @include glass-card-dark;
+  border-radius: $radius-md;
   @include transition(transform $transition-normal, border-color $transition-normal, box-shadow $transition-normal);
   position: relative;
   overflow: hidden;

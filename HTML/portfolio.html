@@ -105,22 +105,15 @@
       <!-- ───────────────────────────────────────────────────
            CSS GRID EXPLÍCITO — portfolio-grid
            Demuestra: grid-template-columns, grid-column: span,
-           gap, auto-rows y named areas.
-      ─────────────────────────────────────────────────────── -->
-      <div class="portfolio-grid">
-
-        <!-- Proyecto 1 -->
+           gap, auto-rows        <!-- Proyecto 1 -->
         <article class="project-card reveal" data-category="frontend" id="project-dashboard">
           <div class="project-img">
-            <img
-              src="../image/Mi Sitio.png"
-              alt="Dashboard Analytics — proyecto de panel de control con gráficas" loading="lazy" />
+            <img src="../image/Mi Sitio.png" alt="Mi Sitio Web Personal con SASS" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
+              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-github"></i> Código
               </a>
-              <a href="#" aria-label="Ver demo del proyecto">
+              <a href="#">
                 <i class="bi bi-box-arrow-up-right"></i> Demo
               </a>
             </div>
@@ -129,14 +122,13 @@
             <span class="project-category">Frontend</span>
             <h2 class="project-title">Mi Sitio Web (Portfolio)</h2>
             <p class="project-desc">
-              Desarrollo integral de un sitio web personal utilizando HTML5 semántico y una arquitectura profesional de SASS.
-              Enfoque en diseño responsivo y optimización SEO.
+              Desarrollo de portafolio profesional utilizando HTML5 semántico y arquitectura SASS 7-1. 
+              Implementación de animaciones on-scroll y diseño responsivo avanzado.
             </p>
             <div class="project-tags">
               <span class="project-tag">HTML5</span>
-              <span class="project-tag">SASS (7-1)</span>
-              <span class="project-tag">Gulp/Npm</span>
-              <span class="project-tag">SEO</span>
+              <span class="project-tag">SASS</span>
+              <span class="project-tag">Git</span>
             </div>
           </div>
         </article>
@@ -144,15 +136,12 @@
         <!-- Proyecto 2 -->
         <article class="project-card reveal delay-1" data-category="landing" id="project-landing">
           <div class="project-img">
-            <img
-              src="../image/Celular.png"
-              alt="Landing page moderna para agencia de marketing digital" loading="lazy" />
+            <img src="../image/Celular.png" alt="Diseño de interfaz móvil responsiva" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
+              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer">
                 <i class="bi bi-github"></i> Código
               </a>
-              <a href="#" aria-label="Ver demo del proyecto">
+              <a href="#">
                 <i class="bi bi-box-arrow-up-right"></i> Demo
               </a>
             </div>
@@ -161,138 +150,16 @@
             <span class="project-category">Landing</span>
             <h2 class="project-title">Responsive UI Design</h2>
             <p class="project-desc">
-              Maquetación de interfaces móviles con un enfoque mobile-first. Implementación de componentes
-              reutilizables y estilos dinámicos para una experiencia de usuario fluida.
+              Maquetación de landing pages modernas con enfoque mobile-first. 
+              Uso intensivo de Flexbox y CSS Grid para una adaptabilidad perfecta.
             </p>
             <div class="project-tags">
               <span class="project-tag">HTML5</span>
               <span class="project-tag">SCSS</span>
-              <span class="project-tag">Mobile First</span>
-              <span class="project-tag">Flexbox</span>
+              <span class="project-tag">Mobile</span>
             </div>
           </div>
         </article>
-
-        <!-- Proyecto 3 -->
-        <article class="project-card reveal delay-2" data-category="uiux" id="project-ecommerce">
-          <div class="project-img">
-            <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
-              alt="Diseño UI de tienda e-commerce con modo oscuro" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
-                <i class="bi bi-github"></i> Código
-              </a>
-              <a href="#" aria-label="Ver demo del proyecto">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">UI/UX</span>
-            <h2 class="project-title">E-commerce Store</h2>
-            <p class="project-desc">
-              Diseño completo de tienda online con catálogo de productos, carrito y checkout. UI moderna con glassmorphism.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Figma</span>
-              <span class="project-tag">UI/UX</span>
-              <span class="project-tag">CSS3</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Proyecto 4 -->
-        <article class="project-card reveal delay-3" data-category="frontend" id="project-weather">
-          <div class="project-img">
-            <img
-              src="https://images.unsplash.com/photo-1504608524841-42584120d1cc?w=600&q=80"
-              alt="Aplicación de clima con diseño limpio y módulos de JavaScript" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
-                <i class="bi bi-github"></i> Código
-              </a>
-              <a href="#" aria-label="Ver demo del proyecto">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Frontend</span>
-            <h2 class="project-title">Weather App</h2>
-            <p class="project-desc">
-              App del clima que consume la API de OpenWeatherMap. Muestra temperatura, humedad y pronóstico semanal.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">Fetch API</span>
-              <span class="project-tag">CSS3</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Proyecto 5 -->
-        <article class="project-card reveal delay-4" data-category="landing" id="project-restaurant">
-          <div class="project-img">
-            <img
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80"
-              alt="Sitio web de restaurante con galería de platos y menú" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
-                <i class="bi bi-github"></i> Código
-              </a>
-              <a href="#" aria-label="Ver demo del proyecto">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Landing</span>
-            <h2 class="project-title">Restaurante Online</h2>
-            <p class="project-desc">
-              Sitio para restaurante con galería de platos, menú interactivo, reservas y mapa embebido.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">HTML5</span>
-              <span class="project-tag">CSS3</span>
-              <span class="project-tag">Bootstrap</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Proyecto 6 -->
-        <article class="project-card reveal delay-5" data-category="uiux" id="project-taskmanager">
-          <div class="project-img">
-            <img
-              src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80"
-              alt="Aplicación de gestión de tareas con tablero Kanban" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer"
-                aria-label="Ver código en GitHub">
-                <i class="bi bi-github"></i> Código
-              </a>
-              <a href="#" aria-label="Ver demo del proyecto">
-                <i class="bi bi-box-arrow-up-right"></i> Demo
-              </a>
-            </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">UI/UX</span>
-            <h2 class="project-title">Task Manager Kanban</h2>
-            <p class="project-desc">
-              Tablero Kanban para gestión de tareas con drag & drop, etiquetas de prioridad y persistencia en localStorage.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">JavaScript</span>
-              <span class="project-tag">localStorage</span>
-              <span class="project-tag">CSS Grid</span>
-            </div>
-          </div>
-        </article>
-
       </div>
       <!-- / portfolio-grid -->
 
