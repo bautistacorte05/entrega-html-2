@@ -256,21 +256,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = article.querySelector('.project-img img');
       if (!img) return;
 
-      // Si ya falló
-      if (!img.complete || img.naturalWidth === 0) {
+      // Si ya falló (p.ej. caché rota)
+      if (img.complete && img.naturalWidth === 0) {
         drawPlaceholder(projectId, img);
         return;
       }
 
-      // Listener para cuando falle la carga
+      // Listener para cuando falle la carga REAL
       img.addEventListener('error', () => {
+        console.log(`Image failed for ${projectId}, drawing placeholder...`);
         drawPlaceholder(projectId, img);
       }, { once: true });
     });
   }
 
-  // Esperar un tick para que el navegador intente cargar las imágenes
-  setTimeout(initProjectPlaceholders, 600);
+  // Ejecutamos después de que el DOM esté listo
+  window.addEventListener('load', () => {
+    setTimeout(initProjectPlaceholders, 1500); 
+  });
 
 
   // ─────────────────────────────────────────────
