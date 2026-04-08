@@ -33,3 +33,16 @@ $base-delay: 0.1s;
     animation-delay: $base-delay * $i;
   }
 }
+
+// --- Scroll Reveal (JS Integration) ---
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform, opacity;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

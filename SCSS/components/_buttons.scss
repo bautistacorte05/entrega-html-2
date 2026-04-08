@@ -10,17 +10,30 @@
   border: none;
   font-weight: 700;
   border-radius: $radius-md;
-  @include transition(transform $transition-fast, box-shadow $transition-fast, opacity $transition-fast);
+  @include transition(transform $transition-fast, box-shadow $transition-fast, opacity $transition-fast, filter $transition-fast);
 
   &:hover {
     color: $color-primary;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: $shadow-glow;
-    opacity: 0.92;
+    opacity: 0.95;
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: translateY(-1px) scale(0.98);
   }
 }
 
 .btn-outline-light {
   border-radius: $radius-md;
   font-weight: 600;
+  @include transition(all $transition-fast);
+
+  &:hover {
+    background-color: #fff;
+    color: $color-primary !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  }
 }
