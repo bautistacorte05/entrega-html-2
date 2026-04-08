@@ -1,7 +1,7 @@
 // ============================================================
 // ANIMATIONS.JS — Bautista.dev
-// Intersection Observer, counters, navbar scroll,
-// image placeholders con Canvas, form feedback
+// Intersection Observer, counters, navbar scroll (disabled),
+// form feedback.
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. NAVBAR SCROLL — (Desactivado por solicitud: Navbar sólido)
   // ─────────────────────────────────────────────
   const navbar = document.querySelector('.custom-navbar');
-  // Lógica eliminada para mantener estado estático
-
+  // Lógica de scroll eliminada para mantener estado estático y color sólido.
 
 
   // ─────────────────────────────────────────────
@@ -90,179 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ─────────────────────────────────────────────
-  // 4. PROJECT IMAGE PLACEHOLDERS CON CANVAS
-  //    Genera una imagen visualmente rica para cada
-  //    tarjeta de proyecto cuando no carga la URL externa.
+  // 4. PROJECT IMAGE PLACEHOLDERS — (Desactivado para estabilidad)
   // ─────────────────────────────────────────────
-
-  /**
-   * Configuración de placeholders por ID de article
-   * Cada entrada define: gradiente, ícono y label para el Canvas
-   */
-  const PROJECT_PLACEHOLDERS = {
-    'project-dashboard': {
-      colors : ['#1a0a2e', '#2d1b69'],
-      accent : '#38ef7d',
-      icon   : '📊',
-      label  : 'Dashboard Analytics',
-    },
-    'project-landing': {
-      colors : ['#0d1b2a', '#1b4332'],
-      accent : '#38ef7d',
-      icon   : '🌐',
-      label  : 'Agencia Digital',
-    },
-    'project-ecommerce': {
-      colors : ['#1a0a2e', '#11998e'],
-      accent : '#38ef7d',
-      icon   : '🛒',
-      label  : 'E-commerce Store',
-    },
-    'project-weather': {
-      colors : ['#0d1b3e', '#1a3a6c'],
-      accent : '#38ef7d',
-      icon   : '🌤️',
-      label  : 'Weather App',
-    },
-    'project-restaurant': {
-      colors : ['#1a0a10', '#3d1515'],
-      accent : '#ef7d38',
-      icon   : '🍽️',
-      label  : 'Restaurante Online',
-    },
-    'project-taskmanager': {
-      colors : ['#0a1a1a', '#0d3333'],
-      accent : '#38ef7d',
-      icon   : '✅',
-      label  : 'Task Manager',
-    },
-  };
-
-  /**
-   * Dibuja un placeholder en Canvas para un proyecto dado
-   * @param {string} projectId  - ID del <article>
-   * @param {HTMLImageElement} img - Elemento <img> a reemplazar
-   */
-  function drawPlaceholder(projectId, img) {
-    const config = PROJECT_PLACEHOLDERS[projectId];
-    if (!config) return;
-
-    // Crear canvas con las mismas dimensiones del contenedor
-    const canvas = document.createElement('canvas');
-    const w = img.parentElement.offsetWidth  || 480;
-    const h = img.parentElement.offsetHeight || 300;
-    canvas.width  = w;
-    canvas.height = h;
-    canvas.style.width  = '100%';
-    canvas.style.height = '100%';
-    canvas.style.display = 'block';
-    canvas.setAttribute('aria-label', config.label);
-
-    const ctx = canvas.getContext('2d');
-
-    // Fondo con gradiente
-    const grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, config.colors[0]);
-    grad.addColorStop(1, config.colors[1]);
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
-
-    // Grid decorativo de puntos
-    ctx.fillStyle = 'rgba(255,255,255,0.04)';
-    const spacing = 28;
-    for (let x = spacing; x < w; x += spacing) {
-      for (let y = spacing; y < h; y += spacing) {
-        ctx.beginPath();
-        ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    // Líneas decorativas
-    ctx.strokeStyle = config.accent + '22';
-    ctx.lineWidth = 1;
-    for (let i = 0; i < 4; i++) {
-      const yPos = (h / 5) * (i + 1);
-      ctx.beginPath();
-      ctx.moveTo(0, yPos);
-      ctx.lineTo(w, yPos);
-      ctx.stroke();
-    }
-
-    // Círculo de fondo para ícono
-    const cx = w / 2;
-    const cy = h / 2 - 18;
-    const r  = Math.min(w, h) * 0.18;
-
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fillStyle = config.accent + '18';
-    ctx.fill();
-    ctx.strokeStyle = config.accent + '55';
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    // Ícono emoji
-    const fontSize = Math.floor(r * 1.1);
-    ctx.font = `${fontSize}px serif`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(config.icon, cx, cy);
-
-    // Título del proyecto
-    ctx.font = `600 ${Math.floor(h * 0.064)}px Inter, system-ui, sans-serif`;
-    ctx.fillStyle = '#ffffff';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'alphabetic';
-    ctx.fillText(config.label, cx, cy + r + h * 0.09);
-
-    // Línea acento inferior
-    const lineW = Math.min(120, w * 0.35);
-    const lineY = cy + r + h * 0.16;
-    ctx.beginPath();
-    ctx.moveTo(cx - lineW / 2, lineY);
-    ctx.lineTo(cx + lineW / 2, lineY);
-    ctx.strokeStyle = config.accent;
-    ctx.lineWidth   = 2.5;
-    ctx.lineCap     = 'round';
-    ctx.stroke();
-
-    // Reemplazar img por canvas en el DOM
-    img.parentElement.replaceChild(canvas, img);
-  }
-
-  /**
-   * Inicializa los placeholders:
-   * - Intenta cargar la imagen real
-   * - Si falla (onerror), dibuja el Canvas placeholder
-   * - Si no tiene src válido, dibuja directamente
-   */
-  function initProjectPlaceholders() {
-    Object.keys(PROJECT_PLACEHOLDERS).forEach((projectId) => {
-      const article = document.getElementById(projectId);
-      if (!article) return;
-
-      const img = article.querySelector('.project-img img');
-      if (!img) return;
-
-      // Si ya falló (p.ej. caché rota)
-      if (img.complete && img.naturalWidth === 0) {
-        drawPlaceholder(projectId, img);
-        return;
-      }
-
-      // Listener para cuando falle la carga REAL
-      img.addEventListener('error', () => {
-        console.log(`Image failed for ${projectId}, drawing placeholder...`);
-        drawPlaceholder(projectId, img);
-      }, { once: true });
-    });
-  }
-
-  // Ejecutamos después de que el DOM esté listo
-  window.addEventListener('load', () => {
-    setTimeout(initProjectPlaceholders, 1500); 
-  });
+  // Se ha removido la lógica de Canvas para evitar conflictos visuales 
+  // con las imágenes profesionales del portfolio.
 
 
   // ─────────────────────────────────────────────
