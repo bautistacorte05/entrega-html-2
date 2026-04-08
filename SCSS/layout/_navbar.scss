@@ -5,16 +5,11 @@
 @use '../abstracts/mixins' as *;
 
 .custom-navbar {
-  @include glass-effect(0.85, 16px);
-  border-bottom: 1px solid $color-border;
+  background: $color-primary; // Color sólido permanente
+  border-bottom: 2px solid $color-border;
   padding: 1rem 0;
-  @include transition(background $transition-normal, box-shadow $transition-normal);
-
-  // Navbar con scroll (nesting)
-  &.scrolled {
-    background: rgba($color-primary, 0.97);
-    box-shadow: $shadow-md;
-  }
+  box-shadow: $shadow-sm;
+  @include transition(box-shadow $transition-normal);
 }
 
 .navbar-brand {

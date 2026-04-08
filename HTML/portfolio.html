@@ -81,61 +81,106 @@
   <main class="py-6">
     <div class="container">
       
-      <!-- Grilla de Proyectos -->
-      <div class="portfolio-grid">
+      <!-- SECCIÓN: FRONT-END -->
+      <div class="portfolio-section mb-6">
+        <div class="section-divider mb-4">
+          <span class="section-tag">Especialidad</span>
+          <h2 class="h3 fw-bold text-white mt-2">Front-end Development</h2>
+          <hr class="opacity-25 mt-3">
+        </div>
         
-        <!-- Proyecto 1 -->
-        <article class="project-card reveal">
-          <div class="project-img">
-            <img src="../image/mi-sitio.png" alt="Mi Sitio Web Personal desarrollado con SASS" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i> Código
-              </a>
+        <div class="portfolio-grid">
+          <!-- Proyecto Front 1 -->
+          <article class="project-card reveal" id="project-front-1">
+            <div class="project-img">
+              <img src="../image/mi-sitio.png" alt="Sitio Web Corporativo" loading="lazy" />
+              <div class="project-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-link-45deg"></i> Ver Demo
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Frontend</span>
-            <h2 class="project-title">Mi Sitio Web (Portfolio)</h2>
-            <p class="project-desc">
-              Desarrollo de portafolio profesional utilizando HTML5 semántico y arquitectura SASS 7-1. 
-              Implementación de animaciones on-scroll y diseño responsivo.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">HTML5</span>
-              <span class="project-tag">SASS</span>
-              <span class="project-tag">Git</span>
+            <div class="project-body">
+              <span class="project-category">React / SASS</span>
+              <h3 class="h5 project-title">Portal de Negocios Moderno</h3>
+              <p class="project-desc">Interfaz de alto rendimiento con arquitectura modular y SEO optimizado.</p>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Proyecto 2 -->
-        <article class="project-card reveal delay-1">
-          <div class="project-img">
-            <img src="../image/celular.png" alt="Diseño de interfaz móvil responsiva" loading="lazy" />
-            <div class="project-overlay">
-              <a href="https://github.com/bautistacorte05" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-github"></i> Código
-              </a>
+          <!-- Proyecto Front 2 -->
+          <article class="project-card reveal delay-1" id="project-front-2">
+            <div class="project-img">
+              <img src="../image/celular.png" alt="App Dashboard" loading="lazy" />
+              <div class="project-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-link-45deg"></i> Ver Demo
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="project-body">
-            <span class="project-category">Landing</span>
-            <h2 class="project-title">Responsive UI Design</h2>
-            <p class="project-desc">
-              Maquetación de landing pages modernas con enfoque mobile-first. 
-              Uso intensivo de Flexbox y CSS Grid para una adaptabilidad perfecta.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">UI/UX</span>
-              <span class="project-tag">SCSS</span>
-              <span class="project-tag">Mobile</span>
+            <div class="project-body">
+              <span class="project-category">Mobile First</span>
+              <h3 class="h5 project-title">Dashboard Administrativo</h3>
+              <p class="project-desc">Diseño responsivo complejo con visualización de datos en tiempo real.</p>
             </div>
-          </div>
-        </article>
-
+          </article>
+        </div>
       </div>
-      <!-- / portfolio-grid -->
+
+      <!-- SECCIÓN: BACK-END -->
+      <div class="portfolio-section mb-6">
+        <div class="section-divider mb-4">
+          <span class="section-tag">Arquitectura</span>
+          <h2 class="h3 fw-bold text-white mt-2">Back-end & APIs</h2>
+          <hr class="opacity-25 mt-3">
+        </div>
+        
+        <div class="portfolio-grid">
+          <!-- Proyecto Back 1 -->
+          <article class="project-card reveal" id="project-back-1">
+            <div class="project-img">
+              <img src="../image/luffy.jpg" alt="Backend API" loading="lazy" />
+              <div class="project-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-git"></i> Repositorio
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Node.js / Express</span>
+              <h3 class="h5 project-title">API REST Escalable</h3>
+              <p class="project-desc">Sistema de autenticación JWT y persistencia en MongoDB para aplicaciones B2B.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- SECCIÓN: UI/UX -->
+      <div class="portfolio-section mb-5">
+        <div class="section-divider mb-4">
+          <span class="section-tag">Diseño</span>
+          <h2 class="h3 fw-bold text-white mt-2">Diseño UI/UX</h2>
+          <hr class="opacity-25 mt-3">
+        </div>
+        
+        <div class="portfolio-grid">
+          <!-- Proyecto UX 1 -->
+          <article class="project-card reveal" id="project-ux-1">
+            <div class="project-img">
+              <img src="../image/mi-sitio.png" alt="Diseño Figma" loading="lazy" />
+              <div class="project-overlay">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-bezier2"></i> Figma File
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-category">Figma / Prototyping</span>
+              <h3 class="h5 project-title">E-commerce Experience</h3>
+              <p class="project-desc">Prototipo interactivo centrado en la conversión y la usabilidad móvil.</p>
+            </div>
+          </article>
+        </div>
+      </div>
 
     </div>
   </main>

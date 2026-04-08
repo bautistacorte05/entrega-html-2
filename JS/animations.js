@@ -7,22 +7,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ─────────────────────────────────────────────
-  // 1. NAVBAR SCROLL — Agrega clase .scrolled al hacer scroll
+  // 1. NAVBAR SCROLL — (Desactivado por solicitud: Navbar sólido)
   // ─────────────────────────────────────────────
   const navbar = document.querySelector('.custom-navbar');
+  // Lógica eliminada para mantener estado estático
 
-  if (navbar) {
-    const handleNavbarScroll = () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    };
-
-    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-    handleNavbarScroll();
-  }
 
 
   // ─────────────────────────────────────────────
