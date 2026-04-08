@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mi Sitio Web personal - Portafolio, servicios y contacto." />
-    <title>Mi Sitio Web | Inicio</title>
+    <meta name="description" content="Bautista Corte — Desarrollador y diseñador web. Creando experiencias digitales modernas, rápidas y accesibles." />
+    <meta name="keywords" content="desarrollador web, diseño web, frontend, HTML, CSS, JavaScript, Bootstrap, portafolio, Buenos Aires" />
+    <meta name="author" content="Bautista Corte" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bautista Corte | Desarrollador Web" />
+    <meta property="og:description" content="Desarrollador y diseñador web. Creando experiencias digitales modernas, rápidas y accesibles." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bautistacorte05.github.io/entrega-html-2/" />
+    <meta property="og:image" content="image/hero-dev.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bautista Corte | Desarrollador Web" />
+    <meta name="twitter:description" content="Portafolio de desarrollo y diseño web." />
+
+    <meta name="theme-color" content="#1a0a2e" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>" />
+    <link rel="canonical" href="https://bautistacorte05.github.io/entrega-html-2/" />
+
+    <title>Bautista Corte | Desarrollador Web</title>
 
     <!-- Bootstrap 5 CSS -->
     <link
@@ -32,7 +52,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">
-          <i class="bi bi-gem me-2"></i>Mi Sitio
+          <i class="bi bi-gem me-2"></i>Bautista.dev
         </a>
         <button
           class="navbar-toggler"
@@ -57,6 +77,9 @@
               <a class="nav-link" href="HTML/servicio.html">Servicios</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="HTML/portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link btn-nav-cta" href="HTML/contacto.html">Contacto</a>
             </li>
           </ul>
@@ -69,19 +92,19 @@
       <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-6">
-            <span class="badge hero-badge mb-3">Bienvenido</span>
+            <span class="badge hero-badge mb-3">👋 Bienvenido</span>
             <h1 class="display-4 fw-bold text-white mb-4">
               Creando experiencias <span class="text-accent">digitales</span> únicas
             </h1>
             <p class="lead text-light mb-5">
-              Diseñador y desarrollador apasionado por la web. Transformo ideas en
-              sitios modernos, rápidos y accesibles.
+              Soy <strong style="color: var(--color-accent);">Bautista Corte</strong>, desarrollador frontend apasionado por la web.
+              Transformo ideas en sitios modernos, rápidos y accesibles.
             </p>
             <div class="d-flex flex-wrap gap-3">
-              <a href="HTML/servicio.html" class="btn btn-accent btn-lg px-4">
-                Ver servicios <i class="bi bi-arrow-right ms-2"></i>
+              <a href="HTML/portfolio.html" class="btn btn-accent btn-lg px-4" id="hero-btn-portfolio">
+                Ver portfolio <i class="bi bi-arrow-right ms-2"></i>
               </a>
-              <a href="HTML/contacto.html" class="btn btn-outline-light btn-lg px-4">
+              <a href="HTML/contacto.html" class="btn btn-outline-light btn-lg px-4" id="hero-btn-contacto">
                 Contactarme
               </a>
             </div>
@@ -89,9 +112,10 @@
           <div class="col-lg-6 text-center">
             <div class="hero-img-wrapper">
               <img
-                src="image/Monkey d_ Luffy wallpaper.jpg"
-                alt="Imagen principal del portafolio"
+                src="image/hero-dev.png"
+                alt="Ilustración de Bautista Corte desarrollando una aplicación web"
                 class="img-fluid rounded-4 hero-img"
+                onerror="this.src='image/Monkey d_ Luffy wallpaper.jpg'"
               />
             </div>
           </div>
@@ -104,26 +128,26 @@
       <div class="container">
         <div class="row g-4 text-center">
           <div class="col-6 col-md-3">
-            <div class="stat-card p-4">
-              <span class="stat-number">3+</span>
-              <p class="stat-label">Años de experiencia</p>
+            <div class="stat-card p-4 reveal">
+              <span class="stat-number" data-target="3" data-suffix="+">3+</span>
+              <p class="stat-label">Años estudiando</p>
             </div>
           </div>
           <div class="col-6 col-md-3">
-            <div class="stat-card p-4">
-              <span class="stat-number">50+</span>
+            <div class="stat-card p-4 reveal delay-1">
+              <span class="stat-number" data-target="6" data-suffix="+">6+</span>
               <p class="stat-label">Proyectos realizados</p>
             </div>
           </div>
           <div class="col-6 col-md-3">
-            <div class="stat-card p-4">
-              <span class="stat-number">20+</span>
-              <p class="stat-label">Clientes satisfechos</p>
+            <div class="stat-card p-4 reveal delay-2">
+              <span class="stat-number" data-target="5" data-suffix="+">5+</span>
+              <p class="stat-label">Tecnologías dominadas</p>
             </div>
           </div>
           <div class="col-6 col-md-3">
-            <div class="stat-card p-4">
-              <span class="stat-number">100%</span>
+            <div class="stat-card p-4 reveal delay-3">
+              <span class="stat-number" data-target="100" data-suffix="%">100%</span>
               <p class="stat-label">Compromiso</p>
             </div>
           </div>
@@ -144,7 +168,7 @@
         <div class="row g-4">
           <!-- Card 1 -->
           <div class="col-md-4">
-            <div class="service-card h-100 p-4">
+            <div class="service-card h-100 p-4 reveal">
               <div class="service-icon mb-3">
                 <i class="bi bi-code-slash"></i>
               </div>
@@ -159,7 +183,7 @@
           </div>
           <!-- Card 2 -->
           <div class="col-md-4">
-            <div class="service-card service-card--featured h-100 p-4">
+            <div class="service-card service-card--featured h-100 p-4 reveal delay-1">
               <div class="service-icon mb-3">
                 <i class="bi bi-palette2"></i>
               </div>
@@ -174,7 +198,7 @@
           </div>
           <!-- Card 3 -->
           <div class="col-md-4">
-            <div class="service-card h-100 p-4">
+            <div class="service-card h-100 p-4 reveal delay-2">
               <div class="service-icon mb-3">
                 <i class="bi bi-phone"></i>
               </div>
@@ -194,12 +218,12 @@
     <!-- ===== CTA ===== -->
     <section class="cta-section py-6 text-center">
       <div class="container">
-        <div class="cta-box p-5 rounded-4">
+        <div class="cta-box p-5 rounded-4 reveal">
           <h2 class="fw-bold mb-3">¿Listo para empezar tu proyecto?</h2>
           <p class="mb-4 text-light">
             Hablemos sobre tu idea y hagámosla realidad juntos.
           </p>
-          <a href="HTML/contacto.html" class="btn btn-accent btn-lg px-5">
+          <a href="HTML/contacto.html" class="btn btn-accent btn-lg px-5" id="cta-inicio-contacto">
             Contactarme <i class="bi bi-send ms-2"></i>
           </a>
         </div>
@@ -212,7 +236,7 @@
         <div class="row gy-4">
           <div class="col-md-4">
             <h5 class="footer-brand fw-bold mb-3">
-              <i class="bi bi-gem me-2"></i>Mi Sitio
+              <i class="bi bi-gem me-2"></i>Bautista.dev
             </h5>
             <p class="text-muted small">
               Portafolio personal de diseño y desarrollo web. Siempre en busca de
@@ -225,20 +249,23 @@
               <li><a href="index.html">Inicio</a></li>
               <li><a href="HTML/sobre-mi.html">Sobre mí</a></li>
               <li><a href="HTML/servicio.html">Servicios</a></li>
+              <li><a href="HTML/portfolio.html">Portfolio</a></li>
               <li><a href="HTML/contacto.html">Contacto</a></li>
             </ul>
           </div>
           <div class="col-md-4">
             <h6 class="footer-heading mb-3">Redes sociales</h6>
             <div class="d-flex gap-3">
-              <a href="#" class="footer-social" aria-label="Instagram">
-                <i class="bi bi-instagram"></i>
+              <a href="https://github.com/bautistacorte05" class="footer-social" target="_blank"
+                rel="noopener noreferrer" aria-label="GitHub">
+                <i class="bi bi-github"></i>
               </a>
-              <a href="#" class="footer-social" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/bautistacorte" class="footer-social" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn">
                 <i class="bi bi-linkedin"></i>
               </a>
-              <a href="#" class="footer-social" aria-label="GitHub">
-                <i class="bi bi-github"></i>
+              <a href="#" class="footer-social" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
               </a>
               <a href="#" class="footer-social" aria-label="Twitter / X">
                 <i class="bi bi-twitter-x"></i>
@@ -248,12 +275,14 @@
         </div>
         <hr class="footer-divider mt-4 mb-3" />
         <p class="text-center text-muted small mb-0">
-          &copy; 2026 Mi Sitio Web. Todos los derechos reservados.
+          &copy; 2026 Bautista Corte. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animaciones JS -->
+    <script src="JS/animations.js"></script>
   </body>
 </html>

@@ -27,9 +27,13 @@
 // 5. Pages (Estilos específicos por página)
 @use 'pages/pages';
 @use 'pages/contact';
+@use 'pages/portfolio';
 
 // 6. Themes (Vacío por ahora)
 // @use 'themes/...';
 
 // 7. Vendors (Vacío por ahora)
 // @use 'vendors/...';
+
+// 8. Responsive — Media queries avanzados (breakpoints propios)
+@use 'responsive';

@@ -1,0 +1,214 @@
+// ============================================================
+// _PORTFOLIO.SCSS — Estilos para la página de portafolio
+// Demuestra uso explícito de CSS Grid
+// ============================================================
+
+@use '../abstracts/variables' as *;
+
+
+// ─── FILTER BAR ──────────────────────────────────────────────
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: $color-text-muted;
+  border-radius: $radius-pill;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background $transition-fast, color $transition-fast, border-color $transition-fast;
+
+  &:hover,
+  &.active {
+    background: rgba($color-accent, 0.12);
+    border-color: rgba($color-accent, 0.35);
+    color: $color-accent;
+  }
+}
+
+
+// ─── CSS GRID DE PROYECTOS ─────────────────────────────────────
+// Uso explícito de CSS Grid (no solo Bootstrap)
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   // 3 columnas iguales en desktop
+  grid-auto-rows: auto;
+  gap: 1.75rem;
+
+  // Proyecto destacado ocupa 2 columnas
+  .project-featured {
+    grid-column: span 2;
+  }
+
+  // Responsive: 2 columnas en tablet
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .project-featured {
+      grid-column: span 2;
+    }
+  }
+
+  // Responsive: 1 columna en mobile
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+
+    .project-featured {
+      grid-column: span 1;
+    }
+  }
+}
+
+
+// ─── PROJECT CARD ─────────────────────────────────────────────
+.project-card {
+  background: $color-card-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  transition: transform $transition-normal, border-color $transition-normal, box-shadow $transition-normal;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($color-accent, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba($color-accent, 0.08);
+
+    .project-img img {
+      transform: scale(1.04);
+    }
+
+    .project-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.project-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/10;   // Ratio consistente
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-normal;
+  }
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba($color-primary, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transition: opacity $transition-normal;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba($color-accent, 0.15);
+    border: 1px solid rgba($color-accent, 0.4);
+    color: $color-accent;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-sm;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba($color-accent, 0.3);
+    }
+  }
+}
+
+.project-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-category {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-accent;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: $color-text-muted;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.project-tag {
+  display: inline-block;
+  background: rgba($color-accent, 0.08);
+  border: 1px solid rgba($color-accent, 0.2);
+  color: $color-accent;
+  border-radius: $radius-pill;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+// ─── REVEAL ANIMATION ─────────────────────────────────────────
+// Para elementos animados con IntersectionObserver desde JS
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.delay-1 { transition-delay: 0.1s; }
+  &.delay-2 { transition-delay: 0.2s; }
+  &.delay-3 { transition-delay: 0.3s; }
+  &.delay-4 { transition-delay: 0.4s; }
+  &.delay-5 { transition-delay: 0.5s; }
+  &.delay-6 { transition-delay: 0.6s; }
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
